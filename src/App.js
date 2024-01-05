@@ -14,7 +14,7 @@ const RegisterForm = () => {
     console.log(formData)
     axios({
       // Endpoint to send files
-      url: "http://localhost:5000/api/signup",
+      url: "http://18.212.205.223:5000/api/signup",
       method: "POST",
       headers: {
           authorization: "your token comes here",
