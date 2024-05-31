@@ -1,12 +1,6 @@
 #!/bin/bash
 
-# Change directory to home
-cd ~
-
-# Clone the repository
-git clone https://github.com/itdefined/frontend_jan_2024.git
 cd frontend_jan_2024
-
 # Upgrade packages
 sudo apt upgrade -y
 
