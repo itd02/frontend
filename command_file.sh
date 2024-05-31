@@ -5,6 +5,7 @@ cd frontend_jan_2024
 sudo apt upgrade -y
 
 # Remove lock files
+sudo rm /var/cache/apt/archives/lock
 sudo rm /var/lib/dpkg/lock-frontend
 sudo rm /var/lib/dpkg/lock
 
