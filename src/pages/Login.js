@@ -22,15 +22,28 @@ const RegisterForm = () => {
         data: formData,
       })
         .then((res) => {
+          if (!res || !res.data || !res.data.user) {
+            // Handle cases where response or data might be undefined or null
+            console.error("Invalid response from server. Response:", res);
+            alert("Invalid response from server. Please try again later.");
+            return;
+          }
+  
+          // Successfully received data from server
           setFullName(res.data.user.fullName);
           sessionStorage.setItem('username', res.data.user.fullName);
           sessionStorage.setItem('email', res.data.user.email);
           setLoggedIn(true);
         })
         .catch((err) => {
-          alert(err.response.data.message);
+          if (err.response && err.response.data && err.response.data.message) {
+            alert(err.response.data.message); // Display error message from backend
+          } else {
+            alert("An error occurred while signing in. Please try again later."); // Generic error message
+          }
         });
     } else {
+      // User is already logged in
       setLoggedIn(true);
       setFullName(sessionStorage.getItem('username'));
     }
