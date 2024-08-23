@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd frontend_jan_2024
+cd frontend
 # Upgrade packages
 sudo apt upgrade -y
 
